@@ -1,0 +1,5 @@
+#define TOKEN "j{JSON Web Token}"
+#define APPID "{AppID}"
+#define HOST "{AppID}.mlkcca.com"
+#define PORT "1883"
+#define TOPIC "{AppID}/message/push"
