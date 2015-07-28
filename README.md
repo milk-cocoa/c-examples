@@ -1,12 +1,6 @@
 README.md
 
 
-
-
-cc onpush.c -lpaho-mqtt3c  -lpthread -L ../org.eclipse.paho.mqtt.c/build/output
-
-
-
 # Introduction
 
 
@@ -25,7 +19,7 @@ sudo make install
 ＊Macの場合は、Makefileの230行目をコメントアウト
 
 
-## milkcocoa_clangをコンパイルして実行
+## milk-cocoa/c-examplesをコンパイルして実行
 
 ```
 git clone git@github.com:milk-cocoa/c-examples.git
