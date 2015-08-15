@@ -33,7 +33,6 @@ int main(int argc, char* argv[])
     MQTTClient_deliveryToken token;
     int rc;
 	char url[100];
-    char topic[128];
 
 	sprintf(url, "%s:%s", HOST, PORT);
 
@@ -53,13 +52,10 @@ int main(int argc, char* argv[])
     pubmsg.payloadlen = strlen(PAYLOAD);
     pubmsg.qos = QOS;
     pubmsg.retained = 0;
-
-    create_push_topic(topic, "message");
-
-    MQTTClient_publishMessage(client, topic, &pubmsg, &token);
+    MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
     printf("Waiting for up to %d seconds for publication of %s\n"
             "on topic %s for client with ClientID: %s\n",
-            (int)(TIMEOUT/1000), PAYLOAD, topic, CLIENTID);
+            (int)(TIMEOUT/1000), PAYLOAD, TOPIC, CLIENTID);
     rc = MQTTClient_waitForCompletion(client, token, TIMEOUT);
     printf("Message with delivery token %d delivered\n", token);
     MQTTClient_disconnect(client, 10000);

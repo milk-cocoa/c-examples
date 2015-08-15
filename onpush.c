@@ -58,11 +58,13 @@ int main(int argc, char** argv)
 {
 	MQTTClient client;
 	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-	char* topic = NULL;
+	char topic[128];
 	int rc = 0;
 	char url[100];
 
-	topic = TOPIC;
+	create_push_topic(topic, "message");
+
+	printf("topic is %s\n", topic);
 
   if (strchr(topic, '#') || strchr(topic, '+'))
 		opts.showtopics = 1;
@@ -78,7 +80,7 @@ int main(int argc, char** argv)
 
 	conn_opts.keepAliveInterval = 10;
 	conn_opts.reliable = 0;
-	conn_opts.cleansession = 1;
+	conn_opts.cleansession = 0;
 	conn_opts.username = opts.token;
 	conn_opts.password = opts.appid;
 	
@@ -105,8 +107,9 @@ int main(int argc, char** argv)
 			MQTTClient_freeMessage(&message);
 			MQTTClient_free(topicName);
 		}
-		if (rc != 0)
-			myconnect(&client, &conn_opts);
+		printf("Failed to connect, return code %d\n", rc);
+		//if (rc != 0)
+		//	myconnect(&client, &conn_opts);
 	}
 	
 	printf("Stopping\n");
