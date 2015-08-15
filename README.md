@@ -1,4 +1,20 @@
-README.md
+Milkcocoa C Examples
+
+C言語でMilkcocoaに接続する方法を説明します。
+
+# サンプルの説明
+
+###app.h
+
+アプリの設定です。
+
+###push.c
+
+MilkcocoaのPush APIを発行するサンプルです。
+
+###onpush.c
+
+MilkcocoaのPush APIを監視するサンプルです。
 
 
 # Introduction
