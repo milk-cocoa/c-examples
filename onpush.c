@@ -107,9 +107,8 @@ int main(int argc, char** argv)
 			MQTTClient_freeMessage(&message);
 			MQTTClient_free(topicName);
 		}
-		printf("Failed to connect, return code %d\n", rc);
-		//if (rc != 0)
-		//	myconnect(&client, &conn_opts);
+		if (rc != 0)
+			myconnect(&client, &conn_opts);
 	}
 	
 	printf("Stopping\n");
