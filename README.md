@@ -45,6 +45,8 @@ sudo make install
 
 ## 次にサンプルコードをコンパイルして動かしてみます
 
+###コンパイルまで
+
 まずソースコードをGithubからクローンします。
 
 ```
@@ -71,6 +73,8 @@ cc onpush.c -o onpush -lpaho-mqtt3c  -lpthread -L ../org.eclipse.paho.mqtt.c/bui
 は最初にMQTTクライアントをビルドした場所の/build/outputか、make installで生成物がインストールされた先のパスを指定してください。
 
 
+###動作確認
+
 以下のコマンドで実行してください。
 
 pahoのMQTTクライアントをビルドしたフォルダの/build/output以下にMQTTのダイナミックリンクライブラリが作成されます。libpaho-mqtt3a.so.1とlibpaho-mqtt3x.so.1をc-examples以下にコピーしてください。サンプルを実行するときに必要です。
@@ -78,9 +82,6 @@ pahoのMQTTクライアントをビルドしたフォルダの/build/output以�
 ```
 ./onpush
 ```
-
-
-
 
 onpush.cはpushの監視を行うだけなので、"message"データストアにJSクライアントなど別の方法で適当なデータをpushしてみてください。
 
