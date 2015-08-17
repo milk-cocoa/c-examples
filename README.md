@@ -21,6 +21,8 @@ MilkcocoaのPush APIを監視するサンプルです。
 
 [PahoのCクライアント](https://eclipse.org/paho/clients/c/)を使ってMilkcocoaに接続します。
 
+- MQTT Clientをインストール
+- サンプルコードを修正してコンパイルし実行する
 
 # PahoのC言語用MQTT Clientをインストール
 
@@ -39,9 +41,9 @@ sudo make install
 	#/sbin/ldconfig $(DESTDIR)${libdir}
 ```
 
-# 次にサンプルコードをコンパイルして動かしてみましょう
+# サンプルコードを動かしてみましょう
 
-## まず動かしてみます
+## 次にサンプルコードをコンパイルして動かしてみます
 
 まずソースコードをGithubからクローンします。
 
