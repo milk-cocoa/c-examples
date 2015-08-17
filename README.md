@@ -75,9 +75,7 @@ cc onpush.c -o onpush -lpaho-mqtt3c  -lpthread -L ../org.eclipse.paho.mqtt.c/bui
 
 ###動作確認
 
-以下のコマンドで実行してください。
-
-pahoのMQTTクライアントをビルドしたフォルダの/build/output以下にMQTTのダイナミックリンクライブラリが作成されます。libpaho-mqtt3a.so.1とlibpaho-mqtt3x.so.1をc-examples以下にコピーしてください。サンプルを実行するときに必要です。
+以下のコマンドで実行してください。PahoのMQTTクライアントをビルドしたフォルダの/build/output以下にMQTTのダイナミックリンクライブラリが作成されます。libpaho-mqtt3a.so.1とlibpaho-mqtt3x.so.1をc-examples以下にコピーしてください。サンプルを実行するときに必要です。
 
 ```
 ./onpush
